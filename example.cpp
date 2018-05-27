@@ -57,7 +57,7 @@ int main () {
   std::cout << 30_knot << std::endl;            // prints '15.4333 m/s'
   std::cout << 1_MeV << std::endl;              // prints '1.60218e-13 J (m2.kg/s2)'
   std::cout << 2000_kcal << std::endl;          // prints '8.368e+09 J (m2.kg/s2)'
-  std::cout << 120_mmHg << std::endl;           // prints '15998.7 Pa (kg/m.s-2)'
+  std::cout << 120_mmHg << std::endl;           // prints '15998.7 Pa (kg/m.s2)'
   
   // And so many constants
   auto radiative_power = Stefan_Boltzmann_constant * pow<4>(300_K) * 1_m2;
