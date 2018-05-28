@@ -26,7 +26,7 @@ What you see in this section is basically the content of example.cpp.
 You should begin by
 
 ```C++
-#include "unit.hpp"
+#include "studis.hpp"
 
 using namespace studis::literals;
 using namespace studis::constants;
