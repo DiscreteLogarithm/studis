@@ -68,18 +68,22 @@ int main () {
   auto mass = 1_kg;
   mass = 300_g;                                 // fine
   // mass = 1_m3;                               // error
-  std::cin >> mass;                             // you can also read its value
+  // you can also read its value
+  std::cout << "Please enter a value (for mass)" << std::endl;
+  std::cin >> mass;
   std::cout << mass << std::endl;
   
   // If you don't want to specify an initial value (not recommended)
   // You have to specify the dimension of the quantity
   studis::Density d;
+  std::cout << "Please enter a value (for density)" << std::endl;
   std::cin >> d;
   std::cout << d << std::endl;
   
   // Many common dimensions are there, but in the case you can't find it there
   // You can specify the power for all 7 base dimensions of the SI yourself.
   studis::Quantity<studis::Dimension<1,0,-3,0,0,0,0>> jerk;
+  std::cout << "Please enter a value (for jerk - change rate of acceleration)" << std::endl;
   std::cin >> jerk;
   std::cout << jerk << std::endl;
   
