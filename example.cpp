@@ -1,10 +1,14 @@
 #include <iostream>
+#include <iomanip>
 #include "studis.hpp"
 
 using namespace studis::literals;
 using namespace studis::constants;
 
 int main () {
+  std::cout << std::setprecision(12);
+  std::cout << std::boolalpha;
+  
   auto l1 = 1.5_m, l2 = 2_cm;
   auto t = 3_s;
   auto l3 = l1 + l2;                            // fine
@@ -31,7 +35,7 @@ int main () {
   // sqrt, cbrt are overloaded for quantities whose result is not a fractional dimension
   // pi, standard_gravity and many other constants are defined in the constants namespace
   auto pendulum_frequency = sqrt (standard_gravity / 1_m) / (2*pi);
-  std::cout << pendulum_frequency << std::endl; // prints '0.498403 Hz (1/s)'
+  std::cout << pendulum_frequency << std::endl; // prints '0.498402795329 Hz (1/s)'
   std::cout << cbrt (1_litre) << std::endl;     // prints '0.1 m'
   // fractional power dimensions are not supported
   // std::cout << sqrt (1_s) << std::endl;      // error
@@ -40,7 +44,7 @@ int main () {
   // Dimensionless quantities can be used with any math function
   // Since they implicitly convert to a floating-point
   auto pos = 1_cm * cos (2*pi*1_s*pendulum_frequency);
-  std::cout << pos << std::endl;                // prints '-0.0099995 m'
+  std::cout << pos << std::endl;                // prints '-0.00999949644462 m'
   // std::cout << cos (1_s) << std::endl;       // error
   
   // There are so many units and prefixes here
@@ -53,16 +57,16 @@ int main () {
     std::cout << "cricitally damped" << std::endl;
   else std::cout << "underdamped" << std::endl;
   // You can use STUDIS simply as a unit convertor (to SI units)
-  std::cout << 10_ly << std::endl;              // prints '9.46073e+16 m'
-  std::cout << 30_knot << std::endl;            // prints '15.4333 m/s'
-  std::cout << 1_MeV << std::endl;              // prints '1.60218e-13 J (m2.kg/s2)'
-  std::cout << 2000_kcal << std::endl;          // prints '8.368e+09 J (m2.kg/s2)'
-  std::cout << 120_mmHg << std::endl;           // prints '15998.7 Pa (kg/m.s2)'
+  std::cout << 10_ly << std::endl;              // prints '9.46073047258e+16 m'
+  std::cout << 30_knot << std::endl;            // prints '15.4333333333 m/s'
+  std::cout << 1_MeV << std::endl;              // prints '1.602176634e-13 J (m2.kg/s2)'
+  std::cout << 2000_kcal << std::endl;          // prints '8368000000 J (m2.kg/s2)'
+  std::cout << 120_mmHg << std::endl;           // prints '15998.6864898 Pa (kg/m.s2)'
   
   // And so many constants
   auto radiative_power = Stefan_Boltzmann_constant * pow<4>(300_K) * 1_m2;
-  std::cout << radiative_power << std::endl;    // prints '459.3 W (m2.kg/s3)'
-  std::cout << electron_mass << std::endl;      // prints '9.10938e-31 kg'
+  std::cout << radiative_power << std::endl;    // prints '459.300327954 W (m2.kg/s3)'
+  std::cout << electron_mass << std::endl;      // prints '9.1093837015e-31 kg'
   
   // Value of a (non-const) variable can change but its dimension can't
   auto mass = 1_kg;

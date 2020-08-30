@@ -300,33 +300,55 @@ List of units
 List of constants
 -----------------
 
-### Fundamental constants
+### Fundamental constants defining the 7 base units of the 2018 SI system
 
-These values are based on the 2014 self-consistent set of values of the constants and conversion factors of physics and chemistry recommended by the Committee on Data for Science and Technology (CODATA). These values are based on a least-squares adjustment that takes into account all data available up to 31 December 2014.
+| Constants                 | Defined value                                  | Unit  |
+|---------------------------|------------------------------------------------|-------|
+| `speed_of_light`          | _c_ = 299792458                                | m/s   |
+| `Planck_constant`         | ℎ = 6.62607015 * 10<sup>-34</sup>              | J s   |
+| `elementary_charge`       | _e_ = 1.602176634 * 10<sup>-19</sup>           | C     |
+| `Boltzmann_constant`      | _k_ = 1.380649 * 10<sup>-23</sup>              | J/K   |
+| `Avogadro_constant`       | _N_<sub>A</sub> = 6.02214076 * 10<sup>23</sup> | 1/mol |
+| `hyperfine_transition_frequency_of_Cs_133` | Δν<sub>Cs</sub> = 9192631770  | Hz    |
+| `luminous_efficacy`       | _K_<sub>cd</sub> = 873                         | lm/W  |
 
-| Constants | Value | Unit |
-|-----------|-------|------|
-| `speed_of_light` | _c_ = 299792458 | m/s |
-| `magnetic_constant`, `vacuum_permeability` | _μ_<sub>0</sub> = 4π * 10<sup>-7</sup> | N/A<sup>2</sup> |
-| `electric_constant`, `vacuum_permittivity` | _ε_<sub>0</sub> = 1 / (_μ_<sub>0</sub>_c_<sup>2</sup>) | F/m |
-| `Newtonian_constant_of_gravitation`, <br>`universal_gravitational_constant`, <br>`gravitational_constant` | _G_ = 6.67408 * 10<sup>-11</sup> | N/(m<sup>2</sup> kg<sup>2</sup>) |
-| `Planck_constant` | ℎ = 6.626070040 * 10<sup>-34</sup> | J s |
-| `reduced_Planck_constant` | ℏ = 1.054571800 * 10<sup>-34</sup> | J s |
-| `elementary_charge` | _e_ = 1.6021766208 * 10<sup>-34</sup> | C |
-| `magnetic_flux_quantum` | 𝛷<sub>0</sub> = ℎ / (2 _e_) = 2.067833831 * 10<sup>-34</sup> | Wb |
-| `conductance_quantum` | _G_<sub>0</sub> = 2 _e_<sup>2</sup> / ℎ = 7.748091730 * 10<sup>-5</sup> | S |
-| `electron_mass` | _m_<sub>e</sub> = 9.10938356 * 10<sup>-31</sup> | kg |
-| `proton_mass` | _m_<sub>p</sub> = 1.672621898 * 10<sup>-27</sup> | kg |
-| `proton_electron_mass_ratio` | _m_<sub>p</sub> / _m_<sub>e</sub> = 1836.15267389
-| `fine_structure_constant` | _α_ = _e_<sup>2</sup> / (4 π _ε_<sub>0</sub> ℏ _c_) = 0.0072973525664
-| `inverse_fine_structure_constant` | _α_<sup>-1</sup> = 137.035999139
-| `Rydberg_constant` | _R_<sub>∞</sub> = _α_<sup>2</sup> _m_<sub>e</sub> _c_ / (2 ℎ) = 10973731.568508 | 1/m
-| `Avogadro_constant` | _N_<sub>A</sub> = 6.022140857 * 10<sup>23</sup> | 1/mol |
-| `Faraday_constant` | _F_ = _e_ _N_<sub>A</sub> = 96485.33289 | C/mol |
-| `molar_gas_constant`, `universal_gas_constant`, <br>`gas_constant` | _R_ = 8.3144598 | J/(mol K) |
-| `Boltzmann_constant` | _k_ = _R_ / _N_<sub>A</sub> = 1.38064852 * 10<sup>23</sup> | J/K
-| `Stefan_Boltzmann_constant` | σ = (π<sup>2</sup> / 60) _k_<sup>4</sup> / (ℏ<sup>3</sup> c<sup>2</sup>) = 5.670367 | W/(m<sup>2</sup> K<sup>4</sup>) |
-| `Wien_displacement_law_constant`, `Wien_constant` | b = 2.8977729 * 10<sup>-3</sup> | K m |
+### Fundamental constants whose values are exactly calculable in terms of the defined fundamental constants
+
+| Constants                   | Value                                          | Unit  |
+|-----------------------------|------------------------------------------------|-------|
+| `reduced_Planck_constant`   | ℏ = ℎ / (2 π)                                  | J s   |
+| `magnetic_flux_quantum`     | 𝛷<sub>0</sub> = ℎ / (2 _e_)                    | Wb    |
+| `Josephson_constant`        | _K_<sub>J</sub> = 2 _e_ / ℎ                    | 1/Wb  |
+| `conductance_quantum`       | _G_<sub>0</sub> = 2 _e_<sup>2</sup> / ℎ        | S     |
+| `inverse_of_conductance_quantum` | 1 / _G_<sub>0</sub>                       | Ω     |
+| `von_Klitzing_constant`     | _R_<sub>K</sub> = ℎ / _e_<sup>2</sup>          | Ω     |
+| `Faraday_constant`          | _F_ = _e_ _N_<sub>A</sub>                      | C/mol |
+| `molar_gas_constant`, <br>`universal_gas_constant`, `gas_constant` | _R_ = _k_ _N_<sub>A</sub> | J/(mol K) |
+| `Stefan_Boltzmann_constant` | σ = (π<sup>2</sup> / 60) _k_<sup>4</sup> / (ℏ<sup>3</sup> _c_<sup>2</sup>) | W/(m<sup>2</sup> K<sup>4</sup>) |
+| `first_radiation_constant`  | _c_<sub>1</sub> = 2 π ℎ _c_<sup>2</sup>        | W m<sup>2</sup> |
+| `second_radiation_constant` | _c_<sub>2</sub> = ℎ _c_ / _k_                  | m K |
+| `Wien_displacement_law_constant`, <br>`Wien_constant` | _b_ = 2.897771955185172... * 10<sup>-3</sup> | K m |
+
+### Fundamental constants whose values are determined empirically
+
+These values are based on the 2018 and 2019 set of values of the constants and conversion factors of physics and chemistry recommended by the Committee on Data for Science and Technology (CODATA).
+
+| Constants                 | Value                                          | Unit  | Relative standard uncertainty |
+|---------------------------|------------------------------------------------|-------|-------------------------------|
+| `magnetic_constant`, `vacuum_permeability` | _μ_<sub>0</sub> = 1.25663706212 * 10<sup>-6</sup> | N/A<sup>2</sup> | 1.5 * 10<sup>-10</sup> |
+| `electric_constant`, `vacuum_permittivity` | _ε_<sub>0</sub> = 8.8541878128 * 10<sup>-12</sup> | F/m | 1.5 * 10<sup>-10</sup> |
+| `characteristic_impedance_of_vacuum`       | _Z_<sub>0</sub> = 376.730313668 | Ω | 1.5 * 10<sup>-10</sup> |
+| `Newtonian_constant_of_gravitation`, <br>`universal_gravitational_constant`, <br>`gravitational_constant` | _G_ = 6.67430 * 10<sup>-11</sup> | N/(m<sup>2</sup> kg<sup>2</sup>) | 2.2 * 10<sup>-5</sup> |
+| `atomic_mass_constant`, <br>`atomic_mass_unit`, `Dalton` | _m_<sub>u</sub> = 9.66053906660 * 10<sup>-27</sup>  | kg | 3.0 * 10<sup>-10</sup> |
+| `electron_mass` | _m_<sub>e</sub> = 9.1093837015 * 10<sup>-31</sup>  | kg | 3.0 * 10<sup>-10</sup> |
+| `proton_mass`   | _m_<sub>p</sub> = 1.67262192369 * 10<sup>-27</sup> | kg | 3.1 * 10<sup>-10</sup> |
+| `proton_electron_mass_ratio` | _m_<sub>p</sub> / _m_<sub>e</sub> = 1836.15267343 | | 6.0 * 10<sup>-11</sup> |
+| `fine_structure_constant` | _α_ = _e_<sup>2</sup> / (4 π _ε_<sub>0</sub> ℏ _c_) = 0.0072973525693 | | 1.5 * 10<sup>-10</sup> |
+| `inverse_fine_structure_constant` | _α_<sup>-1</sup> = 137.035999084 | | 1.5 * 10<sup>-10</sup> |
+| `Rydberg_constant` | _R_<sub>∞</sub> = _α_<sup>2</sup> _m_<sub>e</sub> _c_ / (2 ℎ) = 10973731.568160 | 1/m | 1.9 * 10<sup>-12</sup> |
+| `Bohr_magneton` | _μ_<sub>B</sub> = _e_ ℏ / (2 _m_<sub>e</sub>) = 9.2740100783 * 10<sup>-24</sup> | J/T | 3.0 * 10<sup>-10</sup> |
+| `nuclear_magneton` | _μ_<sub>B</sub> = _e_ ℏ / (2 _m_<sub>p</sub>) = 5.0507837461 * 10<sup>-27</sup> | J/T | 3.1 * 10<sup>-10</sup> |
+| `Bohr_radius` | _a_<sub>0</sub> = ℏ / (_α_ _m_<sub>e</sub> c) = 5.29177210903 * 10<sup>-11</sup> | m | 1.5 * 10<sup>-10</sup> |
 
 ### Constants holding the value of non-SI units accepted for use with the International System of Units
 
@@ -344,59 +366,60 @@ These values are based on the 2014 self-consistent set of values of the constant
 
 ### Constants holding the value of non-SI units associated with the CGS and the CGS-Gaussian system of units
 
-| Constant  | Value                                     |
-|-----------|-------------------------------------------|
-| `erg`     | 1 erg = 10<sup>-7</sup> J
-| `dyne`    | 1 dyn = 10<sup>-5</sup> N
-| `poise`   | 1 P = 1 dyn s cm<sup>-2</sup> = 0.1 Pa s
-| `stokes`  | 1 St = 1 cm<sup>2</sup>/s = 10<sup>-4</sup> m<sup>2</sup>/s
-| `gauss`   | 1 G = 1 Mx/cm<sup>2</sup> = 10<sup>-4</sup> T
-| `maxwell` | 1 Mx = 1 G cm<sup>2</sup> = 10<sup>-8</sup> Wb
+| Constant  | Value                                                       |
+|-----------|-------------------------------------------------------------|
+| `erg`     | 1 erg = 10<sup>-7</sup> J                                   |
+| `dyne`    | 1 dyn = 10<sup>-5</sup> N                                   |
+| `poise`   | 1 P = 1 dyn s cm<sup>-2</sup> = 0.1 Pa s                    |
+| `stokes`  | 1 St = 1 cm<sup>2</sup>/s = 10<sup>-4</sup> m<sup>2</sup>/s |
+| `gauss`   | 1 G = 1 Mx/cm<sup>2</sup> = 10<sup>-4</sup> T               |
+| `maxwell` | 1 Mx = 1 G cm<sup>2</sup> = 10<sup>-8</sup> Wb              |
 
 ### Constants holding the value of non-SI units defined by the International Astronomical Union (IAU)
 
 | Constant            | Value                                     |
 |---------------------|-------------------------------------------|
-| `julian_year`       | 365.25 day
-| `astronomical_unit` | 149597870700 m
-| `light_year`        | Product of Julian year and speed of light
-| `parsec`            | (648000/π) astronomical units
+| `julian_year`       | 365.25 day                                |
+| `astronomical_unit` | 149597870700 m                            |
+| `light_year`        | Product of Julian year and speed of light |
+| `parsec`            | (648000/π) astronomical units             |
 
 ### Adopted values
 
-| Constant              | Value                     | Unit             | Remarks |
-|-----------------------|---------------------------|------------------|---------|
-| `standard_gravity`    | _g_<sub>n</sub> = 9.80665 | m/s<sup>2</sup>  |
-| `standard_atmosphere` | atm = 101325              | Pa               |
-| `mercury_density`     | ρ<sub>Hg</sub> = 13595.1  | kg/m<sup>3</sup> | Density used in the definition of mmHg
+| Constant                  | Value                     | Unit             | Remarks                                |
+|---------------------------|---------------------------|------------------|----------------------------------------|
+| `standard_gravity`        | _g_<sub>n</sub> = 9.80665 | m/s<sup>2</sup>  |                                        |
+| `standard_atmosphere`     | atm = 101325              | Pa               |                                        |
+| `standard_state_pressure` | ssp = 100000              | Pa               |                                        |
+| `mercury_density`         | ρ<sub>Hg</sub> = 13595.1  | kg/m<sup>3</sup> | Density used in the definition of mmHg |
 
 ### Constants holding the value of UK and US custmary units
 
-| Constant | Value |
-|----------|-------|
-| `inch`   | 1 in = 2.54 cm
-| `foot`   | 1 ft = 12 in
-| `yard`   | 1 yd = 3 ft
-| `mile`   | 1 mile = 1760 yd
-| `nautical_mile` | 1 nautical mile = 1852 m
-| `knot`   | 1 knot = 1 nautical mile per hour
-| `pound`  | 1 lb = 0.45359237 kg
-| `ounce`  | 1 oz = (1/16) lb
-| `pound_force` | 1 lbf = 1 lb * _g_<sub>n</sub>
-| `pound_force_per_squared_inch` | 1 psi = 1 lbf/in<sup>2</sup>
-| `british_thermal_unit` | 1 BTU = 788169 ft lbf
-| `thermochemical_calorie` | 1 cal = 4184 J
+| Constant                       | Value                             |
+|--------------------------------|-----------------------------------|
+| `inch`                         | 1 in = 2.54 cm                    |
+| `foot`                         | 1 ft = 12 in                      |
+| `yard`                         | 1 yd = 3 ft                       |
+| `mile`                         | 1 mile = 1760 yd                  |
+| `nautical_mile`                | 1 nautical mile = 1852 m          |
+| `knot`                         | 1 knot = 1 nautical mile per hour |
+| `pound`                        | 1 lb = 0.45359237 kg              |
+| `ounce`                        | 1 oz = (1/16) lb                  |
+| `pound_force`                  | 1 lbf = 1 lb * _g_<sub>n</sub>    |
+| `pound_force_per_squared_inch` | 1 psi = 1 lbf/in<sup>2</sup>      |
+| `british_thermal_unit`         | 1 BTU = 788169 ft lbf             |
+| `thermochemical_calorie`       | 1 cal = 4184 J                    |
 
 ### Constants holding the value of other non-SI units
 
-| Constant                | Value |
-|-------------------------|-------|
-| `angstrom`              | 1 Å = 10<sup>-10</sup> m
-| `svedberg`              | 1 S = 10<sup>-13</sup> s
-| `torr`                  | 1 Torr = (1/760) atm
-| `millimeter_of_mercury` | 1 mmHg = ρ<sub>Hg</sub> * _g_<sub>n</sub> * 1 mm
-| `watt_hour`             | 1 Wh = 1 W * 1 h
-| `ampere_hour`           | 1 Ah = 1 A * 1 h
+| Constant                | Value                                            |
+|-------------------------|--------------------------------------------------|
+| `angstrom`              | 1 Å = 10<sup>-10</sup> m                         |
+| `svedberg`              | 1 S = 10<sup>-13</sup> s                         |
+| `torr`                  | 1 Torr = (1/760) atm                             |
+| `millimeter_of_mercury` | 1 mmHg = ρ<sub>Hg</sub> * _g_<sub>n</sub> * 1 mm |
+| `watt_hour`             | 1 Wh = 1 W * 1 h                                 |
+| `ampere_hour`           | 1 Ah = 1 A * 1 h                                 |
 
 Acknowledgement
 ---------------

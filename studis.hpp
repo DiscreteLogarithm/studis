@@ -617,44 +617,52 @@ namespace studis {
   namespace constants {
     using studis::pow;
     using namespace literals;
+    
     constexpr auto speed_of_light = 299792458_m / 1_s;
-    constexpr auto magnetic_constant = pi * 4e-7_N * pow<-2>(1_A);
+    constexpr auto Planck_constant = 6.62607015e-34_J * 1_s;
+    constexpr auto reduced_Planck_constant = Planck_constant / (2 * pi);
+    constexpr auto elementary_charge = 1.602176634e-19_C;
+    constexpr auto Avogadro_constant = 6.02214076e23 / 1_mol;
+    constexpr auto Boltzmann_constant = 1.380649e-23_J / 1_K;
+    constexpr auto hyperfine_transition_frequency_of_Cs_133 = 9192631770_Hz;
+    constexpr auto luminous_efficacy = 873_lm / 1_W;
+    
+    constexpr auto magnetic_flux_quantum = Planck_constant / elementary_charge / 2;
+    constexpr auto conductance_quantum = 2*pow<2>(elementary_charge) / Planck_constant;
+    constexpr auto Josephson_constant = 1 / magnetic_flux_quantum;
+    constexpr auto von_Klitzing_constant = Planck_constant * pow<-2>(elementary_charge);
+    constexpr auto Faraday_constant = elementary_charge * Avogadro_constant;
+    constexpr auto gas_constant = Avogadro_constant * Boltzmann_constant;
+    constexpr auto molar_gas_constant = gas_constant;
+    constexpr auto universal_gas_constant = gas_constant;
+    constexpr auto Stefan_Boltzmann_constant = pow<2>(pi/speed_of_light) * pow<4>(Boltzmann_constant) * pow<-3>(reduced_Planck_constant) / 60;
+    constexpr auto first_radiation_constant = 2 * pi * Planck_constant * pow<2>(speed_of_light);
+    constexpr auto second_radiation_constant = Planck_constant * speed_of_light / Boltzmann_constant;
+    constexpr auto Wien_displacement_law_constant = 2.897771955185172e-3_K * 1_m;
+    constexpr auto Wien_constant = Wien_displacement_law_constant;
+    
+    constexpr auto magnetic_constant = 1.25663706212e-6_H / 1_m;
     constexpr auto vacuum_permeability = magnetic_constant;
     constexpr auto electric_constant = pow<-2>(speed_of_light) / magnetic_constant;
     constexpr auto vacuum_permittivity = electric_constant;
-//     constexpr auto characteristic_impedance_of_vacuum = magnetic_constant * speed_of_light;
-    constexpr auto gravitational_constant = 6.67408e-11_N * 1_m2 * pow<-2>(1_kg);
+    constexpr auto characteristic_impedance_of_vacuum = magnetic_constant * speed_of_light;
+    constexpr auto gravitational_constant = 6.67430e-11_N * 1_m2 * pow<-2>(1_kg);
     constexpr auto Newtonian_constant_of_gravitation = gravitational_constant;
     constexpr auto universal_gravitational_constant = gravitational_constant;
-    constexpr auto Planck_constant = 6.626070040e-34_J * 1_s;
-    constexpr auto reduced_Planck_constant = 1.054571800e-34_J * 1_s;
-    constexpr auto elementary_charge = 1.6021766208e-19_C;
-    /* Instead of 'Planck_constant/elementary_charge/2'
-       we use 'decltype(Planck_constant/elementary_charge/2) {2.067833831e-15}'
-       to avoid roundoff errors and have the correct number of significant digits */
-    constexpr auto magnetic_flux_quantum = decltype(Planck_constant/elementary_charge/2) {2.067833831e-15};
-    constexpr auto conductance_quantum = decltype(2*pow<2>(elementary_charge)/Planck_constant) {7.748091730e-5};
-    constexpr auto electron_mass = 9.10938356e-31_kg;
-    constexpr auto proton_mass = 1.672621898e-27_kg;
-    constexpr auto proton_electron_mass_ratio = 1836.15267389;
-    constexpr auto fine_structure_constant = decltype(magnetic_constant*speed_of_light*pow<2>(elementary_charge)/Planck_constant/2) {7.2973525664e-3};
-    constexpr auto inverse_fine_structure_constant = 137.035999139;
-    constexpr auto Rydberg_constant = decltype(fine_structure_constant*fine_structure_constant*electron_mass*speed_of_light/Planck_constant/2) {10973731.568508};
-    constexpr auto Avogadro_constant = 6.022140857e23 / 1_mol;
-    constexpr auto Faraday_constant = decltype(elementary_charge*Avogadro_constant) {96485.33289};
-    constexpr auto gas_constant = 8.3144598_J / 1_mol / 1_K;
-    constexpr auto molar_gas_constant = gas_constant;
-    constexpr auto universal_gas_constant = gas_constant;
-    constexpr auto Boltzmann_constant = decltype(gas_constant/Avogadro_constant) {1.38064852e-23};
-    constexpr auto Stefan_Boltzmann_constant = decltype(pow<2>(pi/speed_of_light)*pow<4>(Boltzmann_constant)*pow<-3>(reduced_Planck_constant)/60) {5.670367e-8};
-    constexpr auto Wien_displacement_law_constant = 2.8977729e-3_K * 1_m;
-    constexpr auto Wien_constant = Wien_displacement_law_constant;
-    constexpr auto atomic_mass_unit = 1.660539040e-27_kg;
-    constexpr auto Dalton = atomic_mass_unit;
+    constexpr auto electron_mass = 9.1093837015e-31_kg;
+    constexpr auto proton_mass = 1.67262192369e-27_kg;
+    constexpr auto proton_electron_mass_ratio = 1836.15267343;
+    constexpr auto fine_structure_constant = magnetic_constant * speed_of_light*pow<2>(elementary_charge) / Planck_constant / 2;
+    constexpr auto inverse_fine_structure_constant = 1 / fine_structure_constant;
+    constexpr auto Rydberg_constant = electron_mass * pow<4>(elementary_charge) / (8 * pow<2>(vacuum_permittivity) * pow<3>(Planck_constant) * speed_of_light); //decltype(fine_structure_constant*fine_structure_constant*electron_mass*speed_of_light/Planck_constant/2) {10973731.568508};
+    constexpr auto atomic_mass_constant = 1.66053906660e-27_kg;
+    constexpr auto atomic_mass_unit = atomic_mass_constant;
+    constexpr auto Dalton = atomic_mass_constant;
     constexpr auto electron_volt = elementary_charge*1_V;
-//     constexpr auto inverse_of_conductance_quantum = 1/conductance_quantum;
-//     constexpr auto Josephson_constant = 1/magnetic_flux_quantum;
-//     constexpr auto von_Klitzing_constant = Planck_constant*pow<-2>(elementary_charge);
+    constexpr auto inverse_of_conductance_quantum = 1 / conductance_quantum;
+    constexpr auto Bohr_magneton = elementary_charge*reduced_Planck_constant/electron_mass/2;
+    constexpr auto nuclear_magneton = elementary_charge*reduced_Planck_constant/proton_mass/2;
+    constexpr auto Bohr_radius = reduced_Planck_constant / (electron_mass * speed_of_light * fine_structure_constant);
 //     constexpr auto Planck_length = sqrt (reduced_Planck_constant*gravitational_constant*pow<-3>(speed_of_light));
 //     constexpr auto Planck_mass = sqrt (reduced_Planck_constant*speed_of_light/gravitational_constant);
 //     constexpr auto Planck_time = sqrt (reduced_Planck_constant*gravitational_constant*pow<-5>(speed_of_light));
@@ -681,6 +689,7 @@ namespace studis {
     
     constexpr auto standard_gravity = 9.80665_m_per_s2;
     constexpr auto standard_atmosphere = 101325_Pa;
+    constexpr auto standard_state_pressure = 100000_Pa;
     constexpr auto mercury_density = 13595.1_kg_per_m3;
     
     constexpr auto inch = 2.54_cm;
@@ -709,9 +718,6 @@ namespace studis {
     constexpr auto millimeter_of_mercury = mercury_density*standard_gravity*1e-3_m;
     constexpr auto watt_hour = 1_W*hour;
     constexpr auto ampere_hour = 1_A*hour;
-//     constexpr auto Bohr_magneton = elementary_charge*reduced_Planck_constant/electron_mass/2;
-//     constexpr auto nuclear_magneton = elementary_charge*reduced_Planck_constant/proton_mass/2;
-//     constexpr auto Bohr_radius = fine_structure_constant / (4*pi*Rydberg_constant);
 //     constexpr auto Hartree_energy = 2*Rydberg_constant*Planck_constant*speed_of_light;
   }
   
